@@ -15,23 +15,18 @@ def homePage():
 def index():
     try:
         age=float(request.form['age'])
-        sibsp=float(request.form['sibsp'])
-        parch=float(request.form['parch'])
-        fare=float(request.form['fare'])
-        pclass=float(request.form['pclass'])
+        wrkcls=float(request.form['wrkcls'])
+        fnlwgt=float(request.form['fnlwgt'])
+        education_num=float(request.form['education_num'])
+        marital_status=float(request.form['marital_status'])
+        occupation=float(request.form['occupation'])
+        relationship=float(request.form['relationship'])
+        race=float(request.form['race'])
         sex=float(request.form['sex'])
-        a1=np.array([0.0,0.0,0.0])
-        a2=np.array([0.0,0.0])
-        a1[int(pclass)-1]=1.0
-        a2[int(sex)-1]=1.0
-        a3=np.append(a1,a2)
-        final_arr=np.append([age,sibsp,parch,fare],a3)
-        model=load(open("dtree.pkl",'rb'))
-        prediction=model.predict([final_arr])
-        if(prediction[0]==0):
-            prediction=" not Survive"
-        else:
-            prediction="Survive"
+        cap_gain=float(request.form['cap_gain'])
+        cap_loss=float(request.form['cap_loss'])
+        hourspweek=float(request.form['hourspweek'])
+        native_count=float(request.form['native_count'])
         return render_template('results.html',prediction=prediction)
     except Exception as e:
         print('The Exception message is: ',e)

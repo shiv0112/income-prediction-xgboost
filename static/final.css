@@ -1,0 +1,41 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:100,300,400);
+
+body {
+  font-family: 'Lato', sans-serif;
+  background: #05595B;
+  color: #F5F5F5;
+}
+
+header {
+  position: relative;
+  margin: 100px 0 25px 0;
+  font-size: 2.3em;
+  text-align: center;
+  letter-spacing: 7px;
+}
+
+#customers {
+  font-family: 'Lato', sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  border-radius: 10px;
+  font-size: 1.23em;
+}
+
+#customers td, #customers th {
+  border: 2.5px solid #F5F5F5;
+  padding: 8px;
+  text-align: center;
+  font-size: 1.23em;
+  background-color: #F5F5F5;
+  color: #05595B;
+}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: #062C30;
+  color: #F5F5F5;
+  font-size: 1.23em;
+}
