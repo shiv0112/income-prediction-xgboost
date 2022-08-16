@@ -2,30 +2,117 @@
 
 {% block head %}
 
-<title>Boston House Price Prediction</title>
+<title>Salary Predict API</title>
 <link rel="Stylesheet" href="{{ url_for('static', filename='style.css') }}">
 {% endblock %}
 
 
 {% block body %}
-<header><h2 style="text-align: center">Predict House Price in Boston</h2></header>
+<header><h2 style="text-align: center">Predict Salary from Income Census</h2></header>
 
 <form id="form" class="topBefore" action="/predict" method="POST">
-		
-  <input type="number" step="0.000000001" name="CRIM" id="crim" placeholder="per capita crime rate">
-  <input type="number" step="0.000000001" name="ZN" id="zn" placeholder="residential land zoned">
-  <input type="number" step="0.000000001" name="INDUS" id="indus" placeholder="non-retail business acres per town">
-  <input type="number" step="0.000000001" name="CHAS" id="chas" placeholder="Charles River present">
-  <input type="number" step="0.000000001" name="NOX" id="nox" placeholder="nitric oxide concentration">
-  <input type="number" step="0.000000001" name="RM" id="rm" placeholder="average number of rooms">
-  <input type="number" step="0.000000001" name="AGE" id="age" placeholder="units built prior to 1940">
-  <input type="number" step="0.000000001" name="DIS" id="dis" placeholder="distances to 5 employment centres">
-  <input type="number" step="0.000000001" name="RAD" id="rad" placeholder="accessibility to radial highways">
-  <input type="number" step="0.000000001" name="TAX" id="tax" placeholder="property-tax rate per $10,000">
-  <input type="number" step="0.000000001" name="PTRATIO" id="ptratio" placeholder="pupil-teacher ratio">
-  <input type="number" step="0.000000001" name="B" id="b" placeholder="proportion of blacks by town">
-  <input type="number" step="0.000000001" name="LSTAT" id="lstat" placeholder="% lower status population">
-  <input id="submit" type="submit" value="Predict">
+  <input type="number" step="0.00001" name="age" placeholder="age">
+  <input type="number" step="0.00001" name="fnlwgt" placeholder="final weight">
+  <input type="number" step="0.00001" name="cap_gain" placeholder="capital gain">
+  <input type="number" step="0.00001" name="cap_loss" placeholder="capital loss">
+  <input type="number" step="0.00001" name="hourspweek" placeholder="hours per week">
+
   
+  <input list="r" name="wrkcls" placeholder="Working Class">
+  <datalist id="r">
+    <option value=" Private">Private</option>
+    <option value=" Self-emp-not-inc">Self-emp-not-inc</option>
+    <option value=" Self-emp-inc">Self-emp-inc</option>
+    <option value=" Federal-gov">Federal-gov</option>
+    <option value=" Local-gov">Local-gov</option>
+    <option value=" State-gov">State-gov</option>
+    <option value=" Never-worked">No pay</option>
+  </datalist>
+
+  <input list="e" name="education_num" placeholder="Education"> 
+  <datalist id="e">
+    <option value="16">Doctrate</option>
+    <option value="14">Masters</option>
+    <option value="14">Prof-school</option>
+    <option value="13">Bachelors</option>
+    <option value="12">Assoc-acdm</option>
+    <option value="11">Assoc-voc</option>
+    <option value="10">Some-college</option>
+    <option value="9">HS-grad</option>
+    <option value="8">12th</option>
+    <option value="7">11th</option>
+    <option value="6">10th</option>
+    <option value="5">9th</option>
+    <option value="4">7th-8th</option>
+    <option value="3">5th-6th</option>
+    <option value="2">1st-4th</option>
+  </datalist>
+
+  <input list="m" name="marital_status" placeholder="marital status">
+  <datalist id="m">
+    <option value=" Married-civ-spouse">Married-civ-spouse</option>
+    <option value=" Married-AF-spouse">Married-AF-spouse</option>
+    <option value=" Married-spouse-absen">Married-spouse-absent</option>
+    <option value=" Separated">Separated</option>
+    <option value=" Never-married">Never-married</option>
+    <option value=" Divorced">Divorced</option>
+    <option value=" Widowed">Widowed</option>
+  </datalist>
+
+  <input list="occ" name="occupation" placeholder="occupation"> 
+  <datalist id="occ">
+    <option value=" Tech-support">Tech-support</option>
+    <option value=" Craft-repair">Craft-repair</option>
+    <option value=" Sales">Sales</option>
+    <option value=" Exec-managerial">Exec-managerial</option>
+    <option value=" Prof-specialty">Prof-specialty</option>
+    <option value=" Handlers-cleaners">Handlers-cleaners</option>
+    <option value=" Machine-op-inspct">Machine-op-inspct</option>
+    <option value=" Adm-clerical">Adm-clerical</option>
+    <option value=" Farming-fishing">Farming-fishing</option>
+    <option value=" Transport-moving">Transport-moving</option>
+    <option value=" Priv-house-serv">Priv-house-serv</option>
+    <option value=" Protective-serv">Protective-serv</option>
+    <option value=" Armed-Forces">Armed-Forces</option>
+    <option value=" Other-service">Other-service</option>
+  </datalist>
+
+  <input list="rel" name="relationship" placeholder="relationship"> 
+  <datalist id="rel">
+    <option value=" Husband">Husband</option>
+    <option value=" Wife">Wife</option>
+    <option value=" Own-child">Own-child</option>
+    <option value=" Not-in-family">Not-in-Family</option>
+    <option value=" Other-relative">Other-relative</option>
+    <option value=" Unmarried">Unmarried</option>
+  </datalist>
+
+  <input list="sex" name="sex" placeholder="gender"> 
+  <datalist id="sex">
+    <option value=" Male">Male</option>
+    <option value=" Female">Female</option>
+  </datalist>
+
+  <input list="rc" name="race" placeholder="race"> 
+  <datalist id="rc">
+    <option value=" White">White</option>
+    <option value=" Amer-Indian-Eskimo">Amer-Indian-Eskimo</option>
+    <option value=" Asian-Pac-Islander">Asian-Pac-Islander</option>
+    <option value=" Black">Black</option>
+    <option value=" Other">Other</option>
+  </datalist>
+
+
+  <input list="nc" name="native_count" placeholder="native country"> 
+  <datalist id="nc">
+    <option value=" United-States">USA</option>
+    <option value=" England">England</option>
+    <option value=" India">India</option>
+    <option value=" China">China</option>
+    <option value=" Japan">Japan</option>
+    <option value=" other">Any other</option>
+  </datalist>
+
+  <input id="submit" type="submit" value="Predict">
 </form>
 {% endblock %}
