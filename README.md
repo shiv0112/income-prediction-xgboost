@@ -7,7 +7,7 @@ predict whether a person will have salary <=50K or >50K.
 
 #### Deployed Project Link: https://predict-income-api.herokuapp.com/
 
-##### Jupyter Notebook: (https://github.com/shiv0112/income-prediction-xgboost/blob/master/notebooks/income-prediction.ipynb)
+##### Jupyter Notebook: (https://github.com/shiv0112/income-prediction-xgboost/blob/master/notebooks/income_prediction.ipynb)
 
 ## Data:
 
