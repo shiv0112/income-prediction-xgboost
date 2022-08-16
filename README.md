@@ -70,10 +70,12 @@ I trained this model using XGBoost Classifier:
 ### Index page of Website:
 
 ![Alt text](https://github.com/shiv0112/income-prediction-xgboost/blob/master/screenshots/1.png)
+![Alt text](https://github.com/shiv0112/income-prediction-xgboost/blob/master/screenshots/2.png)
 
 ### Data Input from user:
 
-![Alt text](https://github.com/shiv0112/income-prediction-xgboost/blob/master/screenshots/2.png)
+![Alt text](https://github.com/shiv0112/income-prediction-xgboost/blob/master/screenshots/3.png)
+![Alt text](https://github.com/shiv0112/income-prediction-xgboost/blob/master/screenshots/4.png)
 
 ## Finally prediction displayed:
 
